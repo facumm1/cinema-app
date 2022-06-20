@@ -11,7 +11,7 @@ export const MoviesCards = () => {
         movies.length > 0 ?
         (
           movies.map((movieReq) => (
-          <MovieCard key={movieReq.id} {...movieReq} />
+            <MovieCard key={movieReq.id} {...movieReq} />
           ))
         )
         :

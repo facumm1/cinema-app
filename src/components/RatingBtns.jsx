@@ -1,6 +1,7 @@
-import React from "react";
+  import React from "react";
 
 export const RatingBtns = () => {
+
   return (
     <div className="rating-btns">
       <p>Rating:</p>
@@ -8,7 +9,7 @@ export const RatingBtns = () => {
         <button>S</button>
         <button>S</button>
         <button>S</button>
-        <button>S</button>
+        <button className="six-eight">S</button>
         <button>S</button>
       </div>
     </div>

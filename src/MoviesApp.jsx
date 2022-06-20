@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { MoviesContext } from "./context/MoviesContext";
 
-import { GetMoviesData } from "./helpers/getMoviesData";
+/* import { GetMoviesData } from "./helpers/getMoviesData"; */
 
 import { DiscoverHeader } from "./containers/DiscoverHeader";
 import { MoviesCards } from "./containers/MoviesCards";
 import { MovieDetails } from "./components/MovieDetails";
 
 import "./moviesapp.css";
+
 import 'dotenv/config';
 
 const API_KEY = process.env.API_KEY;
 
 const API_URL =
-  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+  `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
 
 export const MoviesApp = () => {
   const [movies, setMovies] = useState('loading');
@@ -23,7 +24,7 @@ export const MoviesApp = () => {
       .then((tmdbRes) => tmdbRes.json())
       .then((moviesData) => setMovies(moviesData.results));
   }, []);
-  
+
   const [movieDetails, setMovieDetails] = useState({hidden: true});
 
   return (
@@ -33,7 +34,7 @@ export const MoviesApp = () => {
           <h1>MoviesApp</h1>
         </header>
         <main>
-          <DiscoverHeader setMovies={setMovies}/>
+          <DiscoverHeader setMovies={setMovies} API_URL={API_URL}/>
 
           {
             movies === "loading" ? 

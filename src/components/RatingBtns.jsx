@@ -15,39 +15,40 @@ export const RatingBtns = ({API_URL}) => {
 
     const [firstInterval, secondInterval] = intervals.split(',');
 
-    setFilterState([...filterState, target.id]);
+    if(!filterState.includes(+target.id)){
+      let moviesFiltered = moviesForFilter.filter(
+        ({ vote_average }) =>
+          vote_average >= firstInterval && vote_average <= secondInterval 
+      );
 
-    let moviesFiltered;
+      setMovies(moviesFiltered);
+      setFilterState([+target.id]);
+    }
+    else{
+      filterState.splice(filterState.indexOf(+target.id), 1);
 
-    moviesFiltered = moviesForFilter.filter(
-      ({ vote_average }) =>
-        vote_average >= firstInterval && vote_average <= secondInterval 
-    );
-
-    setMovies(moviesFiltered);
-
-    /* console.log(filterState);
-
-    console.log(moviesFiltered); */
+      setFilterState([...filterState]);
+      setMovies(moviesForFilter);
+    }
   };
 
   return (
     <div className="rating-btns">
       <p>Rating:</p>
       <div>
-        <button id={0} value={[0,2]} onClick={filterMovies}>
+        <button id={1} value={[0,2]} onClick={filterMovies}>
           0-2
         </button>
         <button id={2} value={[2,4]} onClick={filterMovies}>
           2-4
         </button>
-        <button id={4} value={[4,6]} onClick={filterMovies}>
+        <button id={3} value={[4,6]} onClick={filterMovies}>
           4-6
         </button>
-        <button id={6} value={[6,8]} onClick={filterMovies}>
+        <button id={4} value={[6,8]} onClick={filterMovies}>
           6-8
         </button>
-        <button id={8} value={[8,10]} onClick={filterMovies}>
+        <button id={5} value={[8,10]} onClick={filterMovies}>
           8-10
         </button>
       </div>

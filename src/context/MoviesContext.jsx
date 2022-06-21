@@ -1,4 +1,3 @@
-import React, { createContext } from "react";
-import { GetMoviesData } from "../helpers/getMoviesData";
+import { createContext } from "react";
 
 export const MoviesContext = createContext();

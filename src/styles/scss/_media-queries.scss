@@ -1,0 +1,61 @@
+@media screen and (min-width: 768px) {
+  main {
+    .discover-header {
+      .rating-search-container {
+        flex-direction: row; 
+        justify-content: center;
+
+        .rating-btns {
+          margin: 16px 64px;
+          padding: 16px 32px;
+          order: 1;
+        }
+
+        form {
+          input {
+            padding: 18px 24px;
+            font-size: 20px;
+
+            &::placeholder {
+              font-size: 20px;
+            }
+          }
+
+          button {
+            padding: 0 32px;
+          }
+        }
+      }
+    }
+
+    .card-container {
+      max-width: 1200px; /**/
+
+      .movie-card {
+        max-width: 275px; /**/
+      }
+    }
+
+    .movie-details {
+      .details-card {
+        flex-direction: row;
+        max-width: 700px;
+        max-height: 400px;
+        min-width: 562px;
+        width: 50%;
+
+        img {
+          min-height: 400px;
+          min-width: 280px;
+          max-width: none;
+          width: 50%;
+        }
+
+        .details-article {
+          justify-content: space-around;
+          min-width: 282px;
+        }
+      }
+    }
+  }
+}

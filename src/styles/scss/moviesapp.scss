@@ -1,0 +1,17 @@
+@import "variables";
+@import "keyframes";
+
+*{
+    box-sizing: border-box;
+    @include initial-size();
+}
+
+body{
+    min-height: 100vh;
+    background-color: $secondary-color;
+}
+
+@import 'pageHeader';
+@import 'pageMain';
+@import 'pageFooter';
+@import 'media-queries';

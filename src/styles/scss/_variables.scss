@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap');
+
+//Fonts
+$title-font: 'Source Sans Pro', sans-serif;
+$text-font: 'Source Serif Pro', serif;
+
+//Colors
+$primary-color: #202020;
+$secondary-color: #f4f4f9;
+$tertiary-color: #454343;
+
+/* No config */
+
+@mixin initial-size {
+    margin: 0;
+    padding: 0;
+}

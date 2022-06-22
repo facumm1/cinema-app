@@ -214,6 +214,7 @@ main {
       display: flex;
       flex-direction: column;
       width: 80%;
+      max-height: 85vh;
       max-width: 355px;
 
       img {
@@ -250,6 +251,7 @@ main {
         padding: 0 16px;
         display: flex;
         flex-direction: column;
+        overflow:auto;
 
         h1 {
           font-family: $title-font;
